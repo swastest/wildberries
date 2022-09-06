@@ -23,7 +23,6 @@
 <img width="6%" title="Java" src="images/logo/Java.svg">
 <img width="6%" title="Selenide" src="images/logo/Selenide.svg">
 <img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
-<img width="6%" title="Postgresql" src="images/logo/Postgresql_elephant.svg.png">
 <img width="6%" title="Allure Report" src="images/logo/Allure_Report.svg">
 <img width="6%" title="Gradle" src="images/logo/Gradle.svg">
 <img width="6%" title="JUnit5" src="images/logo/JUnit5.svg">
@@ -35,22 +34,19 @@
 ***
 
 ## :notebook_with_decorative_cover: Реализованные проверки
-- Негативная проверка восстановления пароля незарегистрированным пользователем
-- Проверка наличия соответствия Title
-- Авторизация пользователя со статусом Активен
-- Авторизация заблокированного пользователя
-- Негативная проверка авторизации
-- Всплывающее уведомление об отправке смс, с кодом подтверждая, отображается при запросе восстановления пароля
-- Проверка стоимости уборки за 1 час, на главной странице
-- Проверка контента на странице "Сотрудничество"
-- Проверка отсутствия ошибок в консоли браузера
+- При авторизации с пустым значением в поле номера телефона - отображается ошибка валидации
+- Отображается экран ввода кода подтверждения, при авторизации с валидным номером телефона
+- При неверно введенном коде подтверждения - отображается ошибка, авторизация является неудачной
+- При добавлении товара в список избранных неавторизованному пользователю отображается страница Авторизации и создания аккаунта
+- Количество добавленных товаров отображается в Корзине, в хэдере страницы
+- При клике на ссылку 'Согласен с условиями Правил пользования торговой площадкой', открывается страница с правилами
 
 ***
 
 ## :electric_plug: Сборка в Jenkins
-### <a target="_blank" href="https://jenkins.autotests.cloud/job/swastest_ui_diplom/">Сборка в Jenkins</a>
+### <a target="_blank" href="https://jenkins.autotests.cloud/job/swastest-project/">Сборка в Jenkins</a>
 <p align="center">
-<img title="Jenkins Dashboard" src="images/screenshots/main_jen.png">
+<img title="Jenkins Dashboard" src="images/wb_screen/jenkins_main.png">
 </p>  
 
 ***
@@ -61,7 +57,7 @@
 gradle clean test -Dhost=local 
 ```
 ## :gear: Запуск тестов с выбором параметров
-<img title="Jenkins ParamStart" src="images/screenshots/param_jen.png">
+<img title="Jenkins ParamStart" src="images/wb_screen/jenkins_build.png">
 
 Удаленный запуск:
 ```
@@ -70,55 +66,36 @@ test
 -Dhost=remote
 -DbrowserName=${BROWSERNAME}
 -DbrowserVersion=${VERSION}
--Dcity=${CITY}
+-DenvUrl=${ENV_URL}
 -DbrowserSize=${BROWSERSIZE}
 ```
-:monocle_face: Попробуйте - это очень удобно!
-- -Dbrowser - можно выбрать браузер, который необходимо открыть именно вам
-  (chrome,
-  opera,
-  firefox,
-  safari)
-- -DbrowserVersion - выберете нужную версию браузера
-- -DbrowserSize - возможность управлять разрешением (1920x1080,
-  1366x768,
-  1280x1024,
-  1280x800,
-  1024x768)
-- -Dcity - здесь вы можете выбрать свой город, для того чтобы узнать стоимость уборки :)
+
 
 ***
 
 ## :open_book: Allure отчет
 - ### Главный экран отчета
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screenshots/allure_main.png">
+<img title="Allure Overview Dashboard" src="images/wb_screen/allure_main.png">
 </p>
 
 - ### Страница с проведенными тестами
 *Можно подробно разобрать каждый шаг тест кейса, сбоку отображаются все шаги и тестовые данные*
 <p align="center">
-<img title="Allure Test Page" src="images/screenshots/allure_steps.png">
-</p>
-
-***
-
-## :hammer: Allure Test Ops отчет
-<p align="center">
-<img title="Allure Test Ops Launch" src="images/screenshots/testOpsLaunch.png">
+<img title="Allure Test Page" src="images/wb_screen/TC_allure.png">
 </p>
 
 ***
 
 ## :robot: Отчет в Telegram
 <p align="center">
-<img title="Telegram notification message" src="images/screenshots/tg.png">
+<img title="Telegram notification message" src="images/wb_screen/tgt_1.png">
 </p>
 
 ***
 ## :film_projector: Видео примеры прохождения тестов
 > К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
 <p align="center">
-  <img title="Selenoid Video" src="images/screenshots/ezgif-3-7fe6118ad8.gif">
+  <img title="Selenoid Video" src="images/wb_screen/652829b7999b22636e89855b0ca8e52c.gif">
 </p>
 
