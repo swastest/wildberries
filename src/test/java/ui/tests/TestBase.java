@@ -10,10 +10,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import ui.pages.AppHeaderPage;
-import ui.pages.AuthPage;
-import ui.pages.MainPage;
-import ui.pages.TermsOfUsePage;
+import ui.pages.*;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static java.lang.String.format;
@@ -23,6 +20,8 @@ public class TestBase {
     AuthPage authPage = new AuthPage();
     MainPage mainPage = new MainPage();
     TermsOfUsePage termsOfUsePage = new TermsOfUsePage();
+    CardProductPage cardProductPage = new CardProductPage();
+
     Faker faker = new Faker();
 
     @BeforeAll

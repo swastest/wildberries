@@ -16,7 +16,8 @@ public class AuthPage {
             loginCodeMessage = $(".login__code-message"),
             loginPhoneInput = $(".input-item"),
             codeInput = $(".j-input-confirm-code"),
-            badCodeMessage = $(".form-block__message--error",1);
+            badCodeMessage = $(".form-block__message--error", 1),
+            headerPage = $(".sign-in-page__title");
 
 
     @Step("Открыть главную страницу авторизации")
@@ -29,6 +30,12 @@ public class AuthPage {
     public AuthPage setLoginPhone(String phone) {
         loginPhoneInput.click();
         loginPhoneInput.sendKeys(phone);
+        return this;
+    }
+
+    @Step("Отображается станица 'Войти или создать профиль'")
+    public AuthPage checkHeaderAuthPage(String txt) {
+        headerPage.shouldHave(Condition.text(txt));
         return this;
     }
 
@@ -69,7 +76,7 @@ public class AuthPage {
     }
 
     @Step("Отображается сообщение об ошибке введенного кода")
-    public AuthPage checkBadCodeMessage(String errorBadCode){
+    public AuthPage checkBadCodeMessage(String errorBadCode) {
         badCodeMessage.shouldHave(Condition.text(errorBadCode));
         return this;
     }

@@ -12,14 +12,14 @@ import static com.codeborne.selenide.Selenide.*;
 public class TermsOfUsePage {
     private ElementsCollection contentHeader = $$("ul.no-decor-list li");
 
-    public TermsOfUsePage openTermsOfUsePage(){
+    public TermsOfUsePage openTermsOfUsePage() {
         open("/services/pravila-polzovaniya-torgovoy-ploshchadkoy");
         return this;
     }
 
-    public TermsOfUsePage checkContent(String[] array){
-        for (int i =0; i<contentHeader.size(); i++){
-            Assertions.assertEquals(array[i],contentHeader.get(i));
+    public TermsOfUsePage checkContent(String[] array) {
+        for (int i = 0; i < contentHeader.size(); i++) {
+            Assertions.assertEquals(array[i], contentHeader.get(i));
         }
         return this;
     }
