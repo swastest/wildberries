@@ -32,7 +32,7 @@ public class TestBase {
                 selenoidPassword = System.getProperty("selenoidPassword", ConfigurationCenter.configRemote.selenoidPassword()),
                 browserSize = System.getProperty("browserSize", "1980x1024"),
                 browserName = System.getProperty("browserName", "CHROME"),
-                browserVersion = System.getProperty("browserVersion", "99"),
+                browserVersion = System.getProperty("browserVersion", "100"),
                 fullSelenoidUrlWithLogPass = format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
                         selenoidLogin, selenoidPassword),
                 host = System.getProperty("host", "local");
