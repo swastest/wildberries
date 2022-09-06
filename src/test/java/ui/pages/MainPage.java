@@ -18,7 +18,7 @@ public class MainPage {
     @Step("Кликнуть по случайному товару из первого блока рекомендуемых товаров, на главной странице")
     public MainPage clickRandomGood() {
         actions().sendKeys(Keys.chord(Keys.PAGE_DOWN)).perform();
-        int randomValue = (int) (Math.random() * 28);
+        int randomValue = (int) (Math.random() * 9);
         hitGoodsFirstList.get(randomValue).click();
         return this;
     }
